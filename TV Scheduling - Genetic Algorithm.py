@@ -1,5 +1,7 @@
 import random
 import csv
+import os
+
 import streamlit as st
 
 GEN = 100
@@ -44,7 +46,10 @@ def read_csv_to_dict(file_path):
     return program_ratings
 
 # Path to the CSV file
-file_path = r"C:\Users\User\Downloads\GA tv scheduling\program_ratings.csv"
+file_path = os.path.join(
+    os.path.dirname(__file__),
+    "program_ratings.csv"
+)
 
 # Get the data in the required format
 program_ratings_dict = read_csv_to_dict(file_path)
